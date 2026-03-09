@@ -8,6 +8,11 @@ export function SettingsModal({ isOpen, onClose }) {
 
   const themeEntries = Object.values(themes);
 
+  const handleThemeSelect = (id) => {
+    setThemeId(id);
+    onClose();
+  };
+
   return (
     <div
       className="fixed inset-0 flex items-center justify-center z-50"
@@ -53,7 +58,7 @@ export function SettingsModal({ isOpen, onClose }) {
             {themeEntries.map((t) => (
               <button
                 key={t.id}
-                onClick={() => setThemeId(t.id)}
+                onClick={() => handleThemeSelect(t.id)}
                 style={{
                   padding: "12px 20px",
                   borderRadius: "8px",
@@ -65,8 +70,20 @@ export function SettingsModal({ isOpen, onClose }) {
                   fontFamily: "Cabin Sketch, cursive",
                   fontSize: "16px",
                   transition: "all 0.2s ease",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
                 }}
               >
+                <span
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    backgroundColor: t.colors.primary,
+                    borderRadius: "4px",
+                    display: "inline-block",
+                  }}
+                />
                 {t.name}
               </button>
             ))}

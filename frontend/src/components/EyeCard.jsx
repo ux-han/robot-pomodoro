@@ -216,6 +216,7 @@ export function EyeCard() {
                     border: "none",
                     backgroundColor: "transparent",
                     fontSize: "24px",
+                    zIndex: 10,
                 }}
                 title="Settings"
             >
