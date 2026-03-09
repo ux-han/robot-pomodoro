@@ -6,15 +6,15 @@ import toggleImg from "../assets/togglebg.png";
 import toggleLeft from "../assets/toggleleft.png";
 import toggleRight from "../assets/toggleright.png";
 import notificationSound from "../assets/notification.wav";
-import { Eye } from "./Eye";
+import { Character } from "./Character";
 import { SettingsModal } from "./SettingsModal";
 
-function Eyes() {
+function Eyes({ isRunning, isStudy }) {
+    const characterState = isRunning ? (isStudy ? "working" : "break") : "idle";
     return (
         <div className="relative shrink-0" data-name="eyes">
             <div className="flex flex-row gap-2 items-center justify-center relative">
-                <Eye isRightEye={false} />
-                <Eye isRightEye={true} />
+                <Character state={characterState} />
             </div>
         </div>
     );
@@ -87,7 +87,7 @@ export function EyeCard() {
                 className="no-drag flex flex-col justify-center items-center relative w-full h-full"
                 style={{ paddingRight: "30px" }}
             >
-                <Eyes />
+                <Eyes isRunning={running} isStudy={isStudy} />
             </div>
 
             {/* Spacing between eyes & the bottom section */}
