@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import computerImg from "../assets/computer.png";
 import buttonImg from "../assets/buttonbg1.png";
 import buttonImg2 from "../assets/buttonbg2.png";
@@ -7,6 +7,7 @@ import toggleLeft from "../assets/toggleleft.png";
 import toggleRight from "../assets/toggleright.png";
 import notificationSound from "../assets/notification.wav";
 import { Eye } from "./Eye";
+import { SettingsModal } from "./SettingsModal";
 
 function Eyes() {
     return (
@@ -26,6 +27,7 @@ export function EyeCard() {
     const [time, setTime] = useState(STUDY_TIME);
     const [running, setRunning] = useState(false);
     const [isStudy, setIsStudy] = useState(true); // true = study, false = break
+    const [showSettings, setShowSettings] = useState(false);
 
     useEffect(() => {
     if (!running) return;
@@ -55,7 +57,6 @@ export function EyeCard() {
         return 0;
         });
     }, 1000);
-    console.log(time)
 
     return () => clearInterval(interval);
     }, [running, isStudy]);
@@ -66,19 +67,6 @@ export function EyeCard() {
         const minutes = Math.floor(seconds / 60).toString().padStart(2, "0");
         const secs = (seconds % 60).toString().padStart(2, "0");
         return `${minutes}:${secs}`;
-    };
-
-    // manual switcher
-    const switchToStudy = () => {
-        setIsStudy(true);
-        setTime(STUDY_TIME);
-        setRunning(false); // stop running when switching
-    };
-
-    const switchToBreak = () => {
-        setIsStudy(false);
-        setTime(BREAK_TIME);
-        setRunning(false);
     };
 
     return (
@@ -215,6 +203,26 @@ export function EyeCard() {
               </button>
             </div>
             </div>
+
+            {/* Settings Button */}
+            <button
+                className="no-drag"
+                onClick={() => setShowSettings(true)}
+                style={{
+                    position: "absolute",
+                    top: "10px",
+                    right: "10px",
+                    cursor: "pointer",
+                    border: "none",
+                    backgroundColor: "transparent",
+                    fontSize: "24px",
+                }}
+                title="Settings"
+            >
+                ⚙
+            </button>
+
+            <SettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} />
 
         </div>
     );
