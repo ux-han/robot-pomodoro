@@ -81,8 +81,20 @@ export function SettingsModal() {
                   fontWeight: "bold",
                   textAlign: "left",
                   transition: "all 0.2s ease",
+                  display: "flex",
+                  alignItems: "center",
                 }}
               >
+                <span
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    borderRadius: "4px",
+                    flexShrink: 0,
+                    backgroundColor: theme.colors.primary,
+                    marginRight: "12px",
+                  }}
+                />
                 {theme.name}
               </button>
             ))}
