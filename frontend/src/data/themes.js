@@ -28,13 +28,13 @@ export const themes = {
       accent: "#a4a44a",
     },
     character: {
-      idle: "/assets/robot-idle.png",
-      working: "/assets/robot-working.png",
-      break: "/assets/robot-break.png",
+      idle: "/assets/computer.png",
+      working: "/assets/computer.png",
+      break: "/assets/computer.png",
     },
     sounds: {
-      workEnd: "/assets/robot-work-end.wav",
-      breakEnd: "/assets/robot-break-end.wav",
+      workEnd: "/assets/notification.wav",
+      breakEnd: "/assets/notification.wav",
     },
   },
 };

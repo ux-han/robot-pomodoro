@@ -67,14 +67,16 @@ export function SettingsModal() {
                 style={{
                   padding: "10px 16px",
                   borderRadius: "8px",
-                  border: themeId === theme.id
-                    ? "2px solid var(--color-accent)"
-                    : "2px solid var(--color-primary)",
+                  border:
+                    themeId === theme.id
+                      ? "2px solid var(--color-accent)"
+                      : "2px solid var(--color-primary)",
                   backgroundColor:
                     themeId === theme.id
                       ? "var(--color-primary)"
                       : "transparent",
-                  color: themeId === theme.id ? "white" : "var(--color-primary)",
+                  color:
+                    themeId === theme.id ? "white" : "var(--color-primary)",
                   cursor: "pointer",
                   fontFamily: "Cabin Sketch",
                   fontSize: "16px",

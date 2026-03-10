@@ -12,7 +12,6 @@
   text-align: center;
 }
 
-
 .card {
   padding: 2em;
 }
@@ -21,7 +20,9 @@
   color: #888;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
   background: transparent !important;
