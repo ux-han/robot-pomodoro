@@ -50,7 +50,7 @@ export function Eye({ className = "", isRightEye = false }) {
 
       const totalDistance = Math.sqrt(
         Math.pow(moveX - defaultPosition.x, 2) +
-          Math.pow(moveY - defaultPosition.y, 2)
+          Math.pow(moveY - defaultPosition.y, 2),
       );
 
       if (totalDistance > maxMovement) {
