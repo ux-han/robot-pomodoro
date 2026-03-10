@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import computerImg from "../assets/computer.png";
 import buttonImg from "../assets/buttonbg1.png";
 import buttonImg2 from "../assets/buttonbg2.png";
@@ -7,6 +7,7 @@ import toggleLeft from "../assets/toggleleft.png";
 import toggleRight from "../assets/toggleright.png";
 import notificationSound from "../assets/notification.wav";
 import { Eye } from "./Eye";
+import { Character } from "./Character";
 
 function Eyes() {
     return (
@@ -67,6 +68,12 @@ export function EyeCard() {
         return `${minutes}:${secs}`;
     };
 
+    // Determine timer state for character sprite
+    const getTimerState = () => {
+        if (!running) return "idle";
+        return isStudy ? "working" : "break";
+    };
+
     return (
         <div
             className="relative drag-region"
@@ -80,6 +87,10 @@ export function EyeCard() {
                 paddingTop: "140px",
             }}
         >
+            {/* Theme-based Character Sprite */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+                <Character timerState={getTimerState()} />
+            </div>
             {/* Eyes Section */}
             <div
                 className="no-drag flex flex-col justify-center items-center relative w-full h-full"
