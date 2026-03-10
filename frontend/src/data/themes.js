@@ -28,9 +28,9 @@ export const themes = {
       accent: "#a4a44a",
     },
     character: {
-      idle: "/assets/computer.png",
-      working: "/assets/computer.png",
-      break: "/assets/computer.png",
+      idle: "/assets/characters/robot-idle.svg",
+      working: "/assets/characters/robot-working.svg",
+      break: "/assets/characters/robot-break.svg",
     },
     sounds: {
       workEnd: "/assets/notification.wav",
