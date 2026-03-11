@@ -699,6 +699,43 @@ html, body, #root {
   --sidebar-ring: oklch(.439 0 0);
 }
 
+.pink {
+  --background: #fff1f2;
+  --foreground: #831843;
+  --card: #fce7f3;
+  --card-foreground: #831843;
+  --popover: #fce7f3;
+  --popover-foreground: #831843;
+  --primary: #be185d;
+  --primary-foreground: #fff;
+  --secondary: #fbcfe8;
+  --secondary-foreground: #831843;
+  --muted: #fce7f3;
+  --muted-foreground: #9d174d;
+  --accent: #db2777;
+  --accent-foreground: #fff;
+  --destructive: #be185d;
+  --destructive-foreground: #fff;
+  --border: #f9a8d4;
+  --input: #fce7f3;
+  --ring: #db2777;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #db2777;
+  --chart-2: #be185d;
+  --chart-3: #9d174d;
+  --chart-4: #831843;
+  --chart-5: #500724;
+  --sidebar: #fce7f3;
+  --sidebar-foreground: #831843;
+  --sidebar-primary: #be185d;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #fbcfe8;
+  --sidebar-accent-foreground: #831843;
+  --sidebar-border: #f9a8d4;
+  --sidebar-ring: #db2777;
+}
+
 html {
   font-size: var(--font-size);
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import computerImg from "../assets/computer.png";
 import buttonImg from "../assets/buttonbg1.png";
 import buttonImg2 from "../assets/buttonbg2.png";
@@ -7,6 +7,7 @@ import toggleLeft from "../assets/toggleleft.png";
 import toggleRight from "../assets/toggleright.png";
 import notificationSound from "../assets/notification.wav";
 import { Eye } from "./Eye";
+import { useTheme } from "../hooks/useTheme";
 
 function Eyes() {
     return (
@@ -26,6 +27,15 @@ export function EyeCard() {
     const [time, setTime] = useState(STUDY_TIME);
     const [running, setRunning] = useState(false);
     const [isStudy, setIsStudy] = useState(true); // true = study, false = break
+    const { theme, setTheme } = useTheme();
+
+    const cycleTheme = () => {
+        if (theme === 'light') setTheme('dark');
+        else if (theme === 'dark') setTheme('pink');
+        else setTheme('light');
+    };
+
+    const themeIcon = theme === 'light' ? '☀️' : theme === 'dark' ? '🌙' : '🌸';
 
     useEffect(() => {
     if (!running) return;
@@ -94,6 +104,32 @@ export function EyeCard() {
                 paddingTop: "140px",
             }}
         >
+            {/* Theme Toggle */}
+            <button
+                onClick={cycleTheme}
+                title={`Current: ${theme} theme`}
+                className="no-drag"
+                style={{
+                    position: "absolute",
+                    top: "20px",
+                    right: "20px",
+                    width: "44px",
+                    height: "44px",
+                    fontSize: "24px",
+                    cursor: "pointer",
+                    border: "none",
+                    borderRadius: "50%",
+                    backgroundColor: "var(--secondary)",
+                    color: "var(--foreground)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                }}
+            >
+                {themeIcon}
+            </button>
+
             {/* Eyes Section */}
             <div
                 className="no-drag flex flex-col justify-center items-center relative w-full h-full"
@@ -114,7 +150,7 @@ export function EyeCard() {
                 <div
                     className="timer-text text-3xl"
                     style={{
-                        color: "#191919ff",
+                        color: "var(--foreground)",
                         fontSize: "64px",
                         fontWeight: "bold",
                         textAlign: "left",
