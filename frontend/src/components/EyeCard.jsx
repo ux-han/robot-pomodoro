@@ -66,7 +66,6 @@ export function EyeCard() {
         return 0;
         });
     }, 1000);
-    console.log(time)
 
     return () => clearInterval(interval);
     }, [running, isStudy]);
@@ -77,19 +76,6 @@ export function EyeCard() {
         const minutes = Math.floor(seconds / 60).toString().padStart(2, "0");
         const secs = (seconds % 60).toString().padStart(2, "0");
         return `${minutes}:${secs}`;
-    };
-
-    // manual switcher
-    const switchToStudy = () => {
-        setIsStudy(true);
-        setTime(STUDY_TIME);
-        setRunning(false); // stop running when switching
-    };
-
-    const switchToBreak = () => {
-        setIsStudy(false);
-        setTime(BREAK_TIME);
-        setRunning(false);
     };
 
     return (
