@@ -33,10 +33,11 @@ export function EyeCard() {
         if (theme === 'light') setTheme('dark');
         else if (theme === 'dark') setTheme('pink');
         else if (theme === 'pink') setTheme('blue');
+        else if (theme === 'blue') setTheme('purple');
         else setTheme('light');
     };
 
-    const themeIcon = theme === 'light' ? '☀️' : theme === 'dark' ? '🌙' : theme === 'pink' ? '🌸' : '💧';
+    const themeIcon = theme === 'light' ? '☀️' : theme === 'dark' ? '🌙' : theme === 'pink' ? '🌸' : theme === 'blue' ? '💧' : '💜';
 
     useEffect(() => {
     if (!running) return;

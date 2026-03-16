@@ -7,7 +7,7 @@ export function useTheme() {
         // Initialize from localStorage or default to 'light'
         if (typeof window !== 'undefined') {
             const stored = localStorage.getItem(STORAGE_KEY);
-            if (stored === 'light' || stored === 'dark' || stored === 'pink' || stored === 'blue') {
+            if (stored === 'light' || stored === 'dark' || stored === 'pink' || stored === 'blue' || stored === 'purple') {
                 return stored;
             }
         }
@@ -19,7 +19,7 @@ export function useTheme() {
         const root = document.documentElement;
 
         // Remove all theme classes
-        root.classList.remove('light', 'dark', 'pink', 'blue');
+        root.classList.remove('light', 'dark', 'pink', 'blue', 'purple');
 
         // Add the current theme class
         root.classList.add(theme);
