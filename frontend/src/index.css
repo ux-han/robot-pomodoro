@@ -736,6 +736,43 @@ html, body, #root {
   --sidebar-ring: #db2777;
 }
 
+.blue {
+  --background: #E8F4FC;
+  --foreground: #1A3A5C;
+  --card: #B3D9F2;
+  --card-foreground: #1A3A5C;
+  --popover: #B3D9F2;
+  --popover-foreground: #1A3A5C;
+  --primary: #4A90D9;
+  --primary-foreground: #fff;
+  --secondary: #87CEEB;
+  --secondary-foreground: #1A3A5C;
+  --muted: #B3D9F2;
+  --muted-foreground: #2E5A87;
+  --accent: #2E5A87;
+  --accent-foreground: #fff;
+  --destructive: #2E5A87;
+  --destructive-foreground: #fff;
+  --border: #87CEEB;
+  --input: #B3D9F2;
+  --ring: #4A90D9;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #4A90D9;
+  --chart-2: #2E5A87;
+  --chart-3: #1A3A5C;
+  --chart-4: #87CEEB;
+  --chart-5: #B3D9F2;
+  --sidebar: #B3D9F2;
+  --sidebar-foreground: #1A3A5C;
+  --sidebar-primary: #4A90D9;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #87CEEB;
+  --sidebar-accent-foreground: #1A3A5C;
+  --sidebar-border: #87CEEB;
+  --sidebar-ring: #4A90D9;
+}
+
 html {
   font-size: var(--font-size);
 }
