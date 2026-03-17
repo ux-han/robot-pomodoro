@@ -847,6 +847,43 @@ html, body, #root {
   --sidebar-ring: #F1C40F;
 }
 
+.orange {
+  --background: #FDF2E9;
+  --foreground: #935116;
+  --card: #FAD7A0;
+  --card-foreground: #935116;
+  --popover: #FAD7A0;
+  --popover-foreground: #935116;
+  --primary: #E67E22;
+  --primary-foreground: #fff;
+  --secondary: #FAD7A0;
+  --secondary-foreground: #935116;
+  --muted: #FAD7A0;
+  --muted-foreground: #BA4A00;
+  --accent: #BA4A00;
+  --accent-foreground: #fff;
+  --destructive: #BA4A00;
+  --destructive-foreground: #fff;
+  --border: #FAD7A0;
+  --input: #FAD7A0;
+  --ring: #E67E22;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #E67E22;
+  --chart-2: #BA4A00;
+  --chart-3: #935116;
+  --chart-4: #FAD7A0;
+  --chart-5: #FDF2E9;
+  --sidebar: #FAD7A0;
+  --sidebar-foreground: #935116;
+  --sidebar-primary: #E67E22;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #FAD7A0;
+  --sidebar-accent-foreground: #935116;
+  --sidebar-border: #FAD7A0;
+  --sidebar-ring: #E67E22;
+}
+
 html {
   font-size: var(--font-size);
 }

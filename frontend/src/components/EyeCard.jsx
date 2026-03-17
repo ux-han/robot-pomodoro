@@ -35,10 +35,11 @@ export function EyeCard() {
         else if (theme === 'pink') setTheme('blue');
         else if (theme === 'blue') setTheme('purple');
         else if (theme === 'purple') setTheme('yellow');
+        else if (theme === 'yellow') setTheme('orange');
         else setTheme('light');
     };
 
-    const themeIcon = theme === 'light' ? '☀️' : theme === 'dark' ? '🌙' : theme === 'pink' ? '🌸' : theme === 'blue' ? '💧' : theme === 'purple' ? '💜' : '⭐';
+    const themeIcon = theme === 'light' ? '☀️' : theme === 'dark' ? '🌙' : theme === 'pink' ? '🌸' : theme === 'blue' ? '💧' : theme === 'purple' ? '💜' : theme === 'yellow' ? '⭐' : '🍊';
 
     useEffect(() => {
     if (!running) return;
