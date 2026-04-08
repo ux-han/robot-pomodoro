@@ -32,10 +32,14 @@ export function EyeCard() {
     const cycleTheme = () => {
         if (theme === 'light') setTheme('dark');
         else if (theme === 'dark') setTheme('pink');
+        else if (theme === 'pink') setTheme('blue');
+        else if (theme === 'blue') setTheme('purple');
+        else if (theme === 'purple') setTheme('yellow');
+        else if (theme === 'yellow') setTheme('orange');
         else setTheme('light');
     };
 
-    const themeIcon = theme === 'light' ? '☀️' : theme === 'dark' ? '🌙' : '🌸';
+    const themeIcon = theme === 'light' ? '☀️' : theme === 'dark' ? '🌙' : theme === 'pink' ? '🌸' : theme === 'blue' ? '💧' : theme === 'purple' ? '💜' : theme === 'yellow' ? '⭐' : '🍊';
 
     useEffect(() => {
     if (!running) return;
@@ -65,7 +69,6 @@ export function EyeCard() {
         return 0;
         });
     }, 1000);
-    console.log(time)
 
     return () => clearInterval(interval);
     }, [running, isStudy]);
@@ -76,19 +79,6 @@ export function EyeCard() {
         const minutes = Math.floor(seconds / 60).toString().padStart(2, "0");
         const secs = (seconds % 60).toString().padStart(2, "0");
         return `${minutes}:${secs}`;
-    };
-
-    // manual switcher
-    const switchToStudy = () => {
-        setIsStudy(true);
-        setTime(STUDY_TIME);
-        setRunning(false); // stop running when switching
-    };
-
-    const switchToBreak = () => {
-        setIsStudy(false);
-        setTime(BREAK_TIME);
-        setRunning(false);
     };
 
     return (
